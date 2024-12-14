@@ -12,11 +12,7 @@ version = "0.1.0~ynh1"
 maintainers = ["eric_G"]
 
 [upstream]
-license = "MIT" # you can see the available licenses identifiers list here: https://spdx.org/licenses/
-website = "https://example.com"
-demo = "https://demo.example.com"
-admindoc = "https://yunohost.org/packaging_apps"
-userdoc = "https://yunohost.org/apps"
+license = "MIT"
 code = "https://some.forge.com/example/example"
 
 [integration]
@@ -34,43 +30,28 @@ ram.runtime = "50M"
 
 [install]
     [install.domain]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "domain"
-
-    [install.path]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    type = "path"
-    default = "/example"
 
     [install.init_main_permission]
     type = "group"
     default = "visitors"
-
 
 [resources]
 
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/foo/bar/archive/refs/tags/v1.2.3.tar.gz"
-    sha256 = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
-
-    # autoupdate.strategy = "latest_github_tag"
+    url = "https://github.com/nkcmr/age-online/archive/802532a07bb93b018e15477bb19c83924405fe0b.tar.gz"
+    sha256 = "b4ab66fba225f6ca079c0cd9941bc9fce78a920c3aae2b7733254cb2b3e35135"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 
     [resources.install_dir]
 
-    [resources.data_dir]
-
     [resources.permissions]
     main.url = "/"
 
     [resources.ports]
+    main.default = 3000
 
-    [resources.apt]
-    packages = "mariadb-server, deb1, deb2, php8.0-foo, php8.0-bar"
-
-    [resources.database]
-    # This will automatically provision/deprovison a MySQL DB and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
-    type = "mysql"
